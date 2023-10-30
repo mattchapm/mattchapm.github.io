@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Matt Chapman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="lightning-charge-fill.ico">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preload" href="/styles/fonts/roboto/roboto-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/styles/fonts/roboto/roboto-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <!-- <link rel="preload" href="/styles/fonts/recoleta/RecoletaBlack.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/styles/fonts/recoleta/RecoletaSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/styles/fonts/recoleta/RecoletaMedium.woff2" as="font" type="font/woff2" crossorigin="crossorigin"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans&family=Raleway:wght@200;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar justify-content-between">
+        <div class="container-lg">
+            <a href="../index.html" class="navbar-brand">Matt Chapman</a>
+            <!-- <div class="d-flex flex-row">
+                <div class="nav-item">Home</div>
+                <div class="nav-item">About</div>
+                <div class="nav-item">Work</div>
+            </div> -->
+        </div>
+    </nav>
+
+
+    <main>
+
+        <div class="article-header border-bottom border-black">
+            <div class="container-lg">
+                <div class="article-title-subtitle">
+                    <h1>Panic buying during Covid-19</h1>
+                    <!-- <h1>A recipe for gentrification</h1> -->
+                    <!-- <p class="lead my-4">The first wave of COVID-19 infections led to widespread stories of ‘panic buying’. In this project, I used mobility data from Google and Apple to empirically investigate the extent of panic buying in different countries.</p> -->
+                </div>
+                <div class="d-flex flex-row mt-4 mt-lg-5">
+                    <div class="button green-bg me-3">D3.js</div>
+                    <div class="button red-bg">Scrollama.js</div>
+                </div>
+                <div class="d-flex flex-column mt-4 mt-lg-5">
+                    <span class="">Posted on</span>
+                    <span class="lead">19 October 2023</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <div class="container-lg">
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <p class="article-text mb-5">The first wave of COVID-19 infections led to widespread stories of shortages in grocery stores as consumers stocked up in anticipation of lockdowns, a behaviour colloquially known as ‘panic buying’.</p>
+                        <p class="article-text mb-5">In this short visual essay, I use mobility data from Google and Apple to compare rates of panic buying across three countries: the United Kingdom, Spain, and South Korea. The piece is primarily intended as a showcase of my skills in D3.js and Python, rather than a full investigative work.</p>
+                        <p class="article-text mb-5"><strong>Note</strong>: This page is not optimised for viewing on small screens. For the best experience, please use a laptop/desktop/tablet.</p>
+                        <h2 class="article-heading mb-5">Hands off my sprouts!</h2>
+                        <p class="article-text">Throughout the pandemic, different countries took different approaches to regulation. As the image below shows, the severity of 'stay at home' restrictions varied significantly by country over the course of the first wave of Covid-19.</p>
+                    </div>
+                </section>
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5">
+                        <h4 class="mb-1">Timeline of 'Stay at Home' restrictions, by country</h4>
+                        <p>Using the Oxford Covid-19 Government Response Tracker's (OxCGRT) 'Severity Index'</p>
+                        <img src="../gov_restrictions.png" class="w-100">
+                        <p>In OxCGRT's schema, a ‘0’ implies no restrictions, a ‘1’ implies vulnerable groups were recommended to shield, a ‘2’ implies a curfew whereby people were allowed out at specific times of day, and a ‘3’ implies total confinement for multiple days at a time.</p>
+                    </div>
+                </section>
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <p class="article-text mb-5">To compare rates of panic buying, I used aggregate mobility data from Google and Apple, accessed via an API.</p>
+                        <p class="article-text mb-5">I normalised the datasets by identifying each country's 'Day 0' - the first day on which Level 2 government restrictions came into play - and plotted levels of mobility before and after this date. Each chart below shows how the level of footfall at grocery shops relative to average footfall across several months in the pre-pandemic period.</p>
+                    </div>
+                </section>
+
+                <section id="scrolly">
+
+                    <article>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="1">
+                            <h2>United Kingdom</h2>
+                            <p class="mx-0 my-2 p-0 text-start">In the UK, the first lockdown measures legally came into force on 26 March 2020 ('Day 0').</p>
+                            <p class="mx-0 my-2 p-0 text-start">As the graph shows, average footfall in grocery stores peaked at a rate 27% higher than the average for the previous period, but quickly fell following the introducion of lockdown restrictions.</p>
+                        </div>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="2">
+                            <h2>Spain</h2>
+                            <p class="m-0 p-0 text-start">Spain's 'Day 0' came 12 days earlier than the UK's, on 14 March 2020. Levels of footfall peaked at 33% - a much higher level than in the UK - and fell to lows of -90% in the weeks after lockdown measures were introduced.</p>
+                        </div>
+                        <div class="step p-3 d-flex flex-column justify-content-center" data-step="3">
+                            <h2>South Korea</h2>
+                            <p class="m-0 my-2 p-0 text-start">Unlike Spain and the UK, South Korea did not observe a big spike in footfall at grocery stores before the introduction of lockdown measures.</p>
+                            <p class="m-0 my-2 p-0 text-start">A possible explanation for this lies in the fact that South Korea was one of the few countries to "phase-in" their lockdown measures. Unlike the UK and Spain, South Korea introduced 'Level 1' regulations early on in the pandemic (on Feb 23 2020), and only introduced 'Level 2' (lockdown) regulations several weeks later.</p>
+                        </div>
+                    </article>
+        
+                    <figure id="myPlot" class="text-center">
+                        <!-- <p>0</p> -->
+                        <!-- <div class="viz"></div> -->
+                    </figure>
+        
+                </section>
+        
+                <!-- <section id="outro"></section> -->
+
+                <section class="mx-0 mx-lg-5 px-0 px-lg-5">
+                    <div class="mx-0 mx-lg-5 px-0 px-lg-5 py-3 py-lg-5">
+                        <h2 class="article-heading mb-5">Methods</h2>
+                        <p class="article-text mb-5">Data analysis was conducted using Python, SQL and D3.js. To produce this piece, I used two data sources accessed via API through the OxCOVID database (Mahdi et al. 2020). First, Google mobility data from March 1 to May 1 2020 were used as a measure of footfall in grocery stores and pharmacies. In the mobility dataset, each value of daily mobility represents the percentage difference in mobility from the median value of the corresponding day in the period January 3 to February 6 2020.</p>
+                        <p class="article-text mb-5">Second, I sourced data about whether ‘Stay At Home’ restrictions were in place from the Oxford Covid-19 Government Response Tracker (OxCGRT) (Hale et al. 2020). In OxCGRT’s schema, a ‘0’ implies no restrictions, a ‘1’ implies vulnerable groups were recommended to shield, a ‘2’ implies a curfew whereby people were allowed out at specific times of day, and a ‘3’ implies total confinement for multiple days at a time.</p>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <!-- <div class='debug'></div> -->
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="../d3-animations.js"></script>
+    <script src="../scrollama-settings.js"></script>
+
+</body>
